@@ -9,7 +9,6 @@ import android.util.Patterns
 import android.widget.Toast
 import com.example.newsapp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.installations.local.PersistedInstallation.RegistrationStatus
 
 class LoginActivity : AppCompatActivity() {
 
