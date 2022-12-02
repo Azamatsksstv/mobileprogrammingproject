@@ -63,4 +63,28 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+
+<!--    login button knopkasy-->
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@+id/passwordTil"
+        android:layout_marginTop="10dp"/>
+
+
+    <!--login zhasauga akk zhoq, rega nado-->
+
+    <TextView
+        android:id="@+id/noAccountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_account"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        style="@style/TextAppearance.MaterialComponents.Caption"/>
+
+
 </RelativeLayout>
