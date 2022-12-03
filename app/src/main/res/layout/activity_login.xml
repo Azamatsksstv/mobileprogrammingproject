@@ -4,99 +4,234 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:background="@drawable/back01"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/titleLabelTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Login"
-        style="@style/TextAppearance.MaterialComponents.Headline4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Login to your account"
-        android:layout_below="@id/titleLabelTV"
-        style="@style/TextAppearance.MaterialComponents.Caption"/>
 
 
-<!--    email and password qosu-->
-
-<!--email zhasau-->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTil"
-        android:layout_above="@+id/passwordTil"
-        android:layout_marginBottom="10dp"
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="250dp"
+        android:background="@drawable/shape_toolbar01">
 
-        <EditText
-            android:id="@+id/emailEt"
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:id="@+id/iconTv"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo"/>
+
+
+        <TextView
+            android:layout_below="@id/iconTv"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Please Login"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-condensed"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
 
-
-
-
-<!--password zhasau-->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTil"
-        app:passwordToggleEnabled="true"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true">
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="225dp">
 
-        <EditText
-            android:id="@+id/passwordEt"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Password"/>
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/emailEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext01"
+                    android:drawableStart="@drawable/ic_email_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#CCCCCC"/>
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailTil"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/passwordEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext01"
+                    android:drawableStart="@drawable/ic_lock_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#CCCCCC"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/forgotTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passwordTil"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Forgot Password?"
+                android:textColor="#3C3C3C"/>
+            
+            
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/forgotTv"
+                android:text="Login"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_button01"
+                android:textColor="@color/white"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
 
     <TextView
-        android:id="@+id/forgotTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passwordTil"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="5dp"
-        android:padding="5dp"
-        android:text="Forgot Password?"
-        android:textColor="#535252"/>
+    android:id="@+id/noAccountTv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/no_account"
+    android:layout_alignParentBottom="true"
+    android:padding="10dp"
+    android:layout_centerHorizontal="true"
+    style="@style/TextAppearance.MaterialComponents.Caption"/>
 
-
-<!--    login button knopkasy-->
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_below="@+id/forgotTv"
-        android:layout_marginTop="10dp"/>
-
-
-    <!--login zhasauga akk zhoq, rega nado-->
-
-    <TextView
-        android:id="@+id/noAccountTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/no_account"
-        android:layout_alignParentBottom="true"
-        android:padding="5dp"
-        android:layout_centerHorizontal="true"
-        style="@style/TextAppearance.MaterialComponents.Caption"/>
 
 
 </RelativeLayout>
+
+<!---->
+
+
+<!--<TextView-->
+<!--android:id="@+id/titleLabelTV"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:text="Login"-->
+<!--style="@style/TextAppearance.MaterialComponents.Headline4"/>-->
+
+<!--<TextView-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:text="Login to your account"-->
+<!--android:layout_below="@id/titleLabelTV"-->
+<!--style="@style/TextAppearance.MaterialComponents.Caption"/>-->
+
+
+<!--    &lt;!&ndash;    email and password qosu&ndash;&gt;-->
+
+<!--    &lt;!&ndash;email zhasau&ndash;&gt;-->
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/emailTil"-->
+<!--android:layout_above="@+id/passwordTil"-->
+<!--android:layout_marginBottom="10dp"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--<EditText-->
+<!--    android:id="@+id/emailEt"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:hint="Email"-->
+<!--    android:inputType="textEmailAddress"/>-->
+
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+
+<!--    &lt;!&ndash;password zhasau&ndash;&gt;-->
+<!--<com.google.android.material.textfield.TextInputLayout-->
+<!--android:id="@+id/passwordTil"-->
+<!--app:passwordToggleEnabled="true"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_centerInParent="true">-->
+
+<!--<EditText-->
+<!--    android:id="@+id/passwordEt"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:inputType="textPassword"-->
+<!--    android:hint="Password"/>-->
+
+
+<!--</com.google.android.material.textfield.TextInputLayout>-->
+
+<!--<TextView-->
+<!--android:id="@+id/forgotTv"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_below="@id/passwordTil"-->
+<!--android:layout_alignParentEnd="true"-->
+<!--android:layout_marginTop="5dp"-->
+<!--android:padding="5dp"-->
+<!--android:text="Forgot Password?"-->
+<!--android:textColor="#535252"/>-->
+
+
+<!--    &lt;!&ndash;    login button knopkasy&ndash;&gt;-->
+<!--<Button-->
+<!--android:id="@+id/loginBtn"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:text="Login"-->
+<!--android:layout_below="@+id/forgotTv"-->
+<!--android:layout_marginTop="10dp"/>-->
+
+
+<!--    &lt;!&ndash;login zhasauga akk zhoq, rega nado&ndash;&gt;-->
+
+<!--<TextView-->
+<!--android:id="@+id/noAccountTv"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:text="@string/no_account"-->
+<!--android:layout_alignParentBottom="true"-->
+<!--android:padding="5dp"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--style="@style/TextAppearance.MaterialComponents.Caption"/>-->
