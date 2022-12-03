@@ -9,15 +9,15 @@ import android.util.Patterns
 import android.widget.Toast
 import com.example.newsapp.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-
-    private lateinit var actionBar: androidx.appcompat.app.ActionBar
-
     private lateinit var progressDialog: ProgressDialog
-
     private lateinit var firebaseAuth: FirebaseAuth
 
     private var email = ""
@@ -28,23 +28,17 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        firebaseAuth = FirebaseAuth.getInstance()
 
-        actionBar = supportActionBar!!
-        actionBar.title = "Login"
 
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
-        progressDialog.setMessage("Logging In...")
         progressDialog.setCanceledOnTouchOutside(false)
-
-        firebaseAuth = FirebaseAuth.getInstance()
-        checkUser()
 
 
         binding.noAccountTv.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
-
         binding.loginBtn.setOnClickListener{
             validateData()
         }
@@ -55,28 +49,23 @@ class LoginActivity : AppCompatActivity() {
         password = binding.passwordEt.text.toString().trim()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            binding.emailEt.error = "Invalid email format"
+            Toast.makeText(this, "Invalid email format...", Toast.LENGTH_SHORT).show()
         }
-        else if (TextUtils.isEmpty(password)){
-            binding.passwordEt.error = "Please enter password"
+        else if (password.isEmpty()){
+            Toast.makeText(this, "Enter password...", Toast.LENGTH_SHORT).show()
         }
         else{
-            firebaseLogin()
+            loginUser()
         }
     }
 
-    private fun firebaseLogin() {
+    private fun loginUser() {
+        progressDialog.setMessage("Logging In...")
         progressDialog.show()
+
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                progressDialog.dismiss()
-                val firebaseUser = firebaseAuth.currentUser
-                val email = firebaseUser!!.email
-                Toast.makeText(this, "LoginIn as ${email}", Toast.LENGTH_SHORT).show()
-
-//                profile page ashylady
-                startActivity(Intent(this, ProfileActivity::class.java))
-                finish()
+                checkUser()
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()
@@ -85,9 +74,33 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkUser() {
-        val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser != null){
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
+        progressDialog.setMessage("Checking User...")
+
+        val firebaseUser = firebaseAuth.currentUser!!
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+
+        ref.child(firebaseUser.uid)
+            .addListenerForSingleValueEvent(object : ValueEventListener{
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    progressDialog.dismiss()
+                    val userType = snapshot.child("userType").value
+                    if (userType == "user"){
+                        startActivity(Intent(this@LoginActivity, DashboardUserActivity::class.java))
+                        finish()
+                    }
+                    else if (userType == "admin"){
+                        startActivity(Intent(this@LoginActivity, DashboardAdminActivity::class.java))
+                        finish()
+                    }
+                }
+
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+
+            })
     }
 }
