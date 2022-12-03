@@ -16,10 +16,8 @@ import com.google.firebase.database.FirebaseDatabase
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-
-    private lateinit var progressDialog: ProgressDialog
-
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var progressDialog: ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
 
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please wait")
-        progressDialog.setMessage("Creating account In...")
+//        progressDialog.setMessage("Creating account In...")
         progressDialog.setCanceledOnTouchOutside(false)
 
 
