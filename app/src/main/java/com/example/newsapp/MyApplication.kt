@@ -3,7 +3,10 @@ package com.example.newsapp
 import android.app.Application
 import android.text.format.DateFormat
 import android.util.Log
+import android.view.View
+import android.widget.ProgressBar
 import android.widget.TextView
+import com.github.barteksc.pdfviewer.PDFView
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storageMetadata
@@ -40,6 +43,48 @@ class MyApplication: Application() {
                     }else{
                         sizeTv.text = "${String.format("$.2f", bytes)} bytes"
                     }
+                }
+                .addOnFailureListener{ e->
+                    Log.d(TAG, "loadPdfSize: Failed to get metadata due to ${e.message}")
+                }
+        }
+
+        fun loadPdfFromUrlSinglePage(
+            pdfUrl: String,
+            pdfTitle: String,
+            pdfView: PDFView,
+            progressBar: ProgressBar,
+            pagesTv: TextView?
+        ){
+
+            val TAG = "PDF_THUMBNNAIL_TAG"
+            val ref = FirebaseStorage.getInstance().getReferenceFromUrl(pdfUrl)
+            ref.getBytes()
+                .addOnSuccessListener { storageMetaData ->
+                    Log.d(TAG, "loadPdfSize: got metadata")
+                    val bytes = storageMetaData.sizeBytes.toDouble()
+                    Log.d(TAG, "loadPdfSize: Size Bytes $bytes")
+
+                    pdfView.fromBytes(bytes)
+                        .pages(0)
+                        .spacing(0)
+                        .swipeHorizontal(false)
+                        .enableSwipe(false)
+                        .onError{ t->
+                            progressBar.visibility = View.INVISIBLE
+                            Log.d(TAG, "loadPdfFromUrlSinglePage: ${t.message}")
+                        }
+                        .onPageError { page, t ->
+                            progressBar.visibility = View.INVISIBLE
+                            Log.d(TAG, "loadPdfFromUrlSinglePage: ${t.message}")
+                        }
+                        .onLoad{ nbPages ->
+                            progressBar.visibility = View.INVISIBLE
+
+                            if (pagesTv != null){
+                                pagesTv.text = "$nbPages"
+                            }
+                        }
                 }
                 .addOnFailureListener{ e->
                     Log.d(TAG, "loadPdfSize: Failed to get metadata due to ${e.message}")
