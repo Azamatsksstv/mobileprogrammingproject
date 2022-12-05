@@ -61,7 +61,7 @@ class PdfListAdminActivity : AppCompatActivity() {
     private fun loadPdfList() {
         pdfArrayList = ArrayList()
         val ref = FirebaseDatabase.getInstance().getReference("Books")
-        ref.orderByChild("categoryId:").equalTo(categoryId)
+        ref.orderByChild("categoryId").equalTo(categoryId)
             .addValueEventListener(object: ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     pdfArrayList.clear()
@@ -78,7 +78,6 @@ class PdfListAdminActivity : AppCompatActivity() {
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
                 }
             })
     }
