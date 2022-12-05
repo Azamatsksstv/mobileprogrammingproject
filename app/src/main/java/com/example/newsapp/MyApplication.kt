@@ -7,7 +7,10 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.github.barteksc.pdfviewer.PDFView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storageMetadata
 import java.sql.Timestamp
@@ -59,10 +62,8 @@ class MyApplication: Application() {
 
             val TAG = "PDF_THUMBNNAIL_TAG"
             val ref = FirebaseStorage.getInstance().getReferenceFromUrl(pdfUrl)
-            ref.getBytes()
-                .addOnSuccessListener { storageMetaData ->
-                    Log.d(TAG, "loadPdfSize: got metadata")
-                    val bytes = storageMetaData.sizeBytes.toDouble()
+            ref.getBytes(Constants.MAX_BYTES_PDF)
+                .addOnSuccessListener { bytes ->
                     Log.d(TAG, "loadPdfSize: Size Bytes $bytes")
 
                     pdfView.fromBytes(bytes)
@@ -89,6 +90,21 @@ class MyApplication: Application() {
                 .addOnFailureListener{ e->
                     Log.d(TAG, "loadPdfSize: Failed to get metadata due to ${e.message}")
                 }
+        }
+
+        fun loadCategory(categoryId: String, categoryTv: TextView){
+            val ref = FirebaseDatabase.getInstance().getReference("Categories")
+            ref.child(categoryId)
+                .addListenerForSingleValueEvent(object: ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val category = "${snapshot.child("category").value}"
+                        categoryTv.text = category
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
         }
     }
 }

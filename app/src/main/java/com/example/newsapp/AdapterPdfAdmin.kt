@@ -31,10 +31,19 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin> {
         val categoryId = model.categoryId
         val title = model.title
         val description = model.description
-        val url = model.url
+//        val url = model.url
+        val pdfUrl = model.url
         val timestamp = model.timestamp
 
+        val formattedDate = MyApplication.formatTimeStamp(timestamp)
 
+        holder.titleTv.text = title
+        holder.descriptionTv.text = description
+        holder.dateTv.text = formattedDate
+
+        MyApplication.loadCategory(categoryId, holder.categoryTv)
+        MyApplication.loadPdfFromUrlSinglePage(pdfUrl, title, holder.pdfView, holder.progressBar, null)
+        MyApplication.loadPdfSize(pdfUrl, title, holder.sizeTv)
     }
 
     override fun getItemCount(): Int {
