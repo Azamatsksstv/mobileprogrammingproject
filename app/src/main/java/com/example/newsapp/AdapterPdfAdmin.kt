@@ -44,7 +44,7 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
 
         holder.titleTv.text = title
         holder.descriptionTv.text = description
-        holder.dateTv.text = formattedDate
+//        holder.dateTv.text = formattedDate
 
         MyApplication.loadCategory(categoryId, holder.categoryTv)
         MyApplication.loadPdfFromUrlSinglePage(pdfUrl, title, holder.pdfView, holder.progressBar, null)
@@ -71,7 +71,7 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
         val descriptionTv = binding.descriptionTv
         val categoryTv = binding.categoryTv
         val sizeTv = binding.sizeTv
-        val dateTv = binding.dateTv
+//        val dateTv = binding.dateTv
         val moreBtn = binding.moreBtn
     }
 
