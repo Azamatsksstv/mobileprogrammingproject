@@ -37,8 +37,8 @@
             style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
             android:layout_toStartOf="@id/moreBtn"
             android:layout_toEndOf="@id/pdfRl"
             android:ellipsize="end"
@@ -46,17 +46,17 @@
             android:text="The Book Title" />
 
 
-        <TextView
-            android:id="@+id/descriptionTv"
-            style="@style/TextAppearance.AppCompat.Body2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/titleTv"
-            android:layout_marginTop="8dp"
-            android:layout_toEndOf="@id/pdfRl"
-            android:ellipsize="end"
-            android:maxLines="4"
-            android:text="" />
+<!--        <TextView-->
+<!--            android:id="@+id/descriptionTv"-->
+<!--            style="@style/TextAppearance.AppCompat.Body2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/titleTv"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_toEndOf="@id/pdfRl"-->
+<!--            android:ellipsize="end"-->
+<!--            android:maxLines="4"-->
+<!--            android:text="" />-->
 
         <TextView
             android:id="@+id/categoryTv"

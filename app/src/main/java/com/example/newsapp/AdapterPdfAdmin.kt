@@ -43,7 +43,7 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
         val formattedDate = MyApplication.formatTimeStamp(timestamp)
 
         holder.titleTv.text = title
-        holder.descriptionTv.text = description
+//        holder.descriptionTv.text = description
 //        holder.dateTv.text = formattedDate
 
         MyApplication.loadCategory(categoryId, holder.categoryTv)
@@ -68,7 +68,7 @@ class AdapterPdfAdmin: RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
         val pdfView  = binding.pdfView
         val progressBar = binding.progressBar
         val titleTv = binding.titleTv
-        val descriptionTv = binding.descriptionTv
+//        val descriptionTv = binding.descriptionTv
         val categoryTv = binding.categoryTv
         val sizeTv = binding.sizeTv
 //        val dateTv = binding.dateTv
