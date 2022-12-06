@@ -44,27 +44,27 @@
     </RelativeLayout>
 
 
-    <EditText
-        android:id="@+id/searchEt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbarRl"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:drawableStart="@drawable/ic_search_gray"
-        android:drawablePadding="10dp"
-        android:padding="10dp"
-        android:hint="Search"
-        android:textColorHint="#CCCCCC"
-        android:textColor="@color/black"/>
+<!--    <EditText-->
+<!--        android:id="@+id/searchEt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/toolbarRl"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:background="@color/white"-->
+<!--        android:drawableStart="@drawable/ic_search_gray"-->
+<!--        android:drawablePadding="10dp"-->
+<!--        android:hint="Search"-->
+<!--        android:padding="10dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textColorHint="#CCCCCC" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/booksRv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchEt"
+        android:layout_below="@id/toolbarRl"
         android:layout_margin="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/row_pdf_admin"/>

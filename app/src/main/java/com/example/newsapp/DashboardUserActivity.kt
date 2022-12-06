@@ -13,8 +13,8 @@ import com.google.firebase.database.ValueEventListener
 class DashboardUserActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardUserBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var adapterCategory: AdapterCategory
-    private lateinit var categoryArraList: ArrayList<ModelCategory>
+    private lateinit var adapterCategoryUser: AdapterCategoryUser
+    private lateinit var categoryArrayList: ArrayList<ModelCategory>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardUserBinding.inflate(layoutInflater)
@@ -36,19 +36,19 @@ class DashboardUserActivity : AppCompatActivity() {
 
     }
     private fun loadCategories() {
-        categoryArraList = ArrayList()
+        categoryArrayList = ArrayList()
 
         val ref = FirebaseDatabase.getInstance().getReference("Categories")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                categoryArraList.clear()
+                categoryArrayList.clear()
                 for (ds in snapshot.children){
                     val model = ds.getValue(ModelCategory::class.java)
 
-                    categoryArraList.add(model!!)
+                    categoryArrayList.add(model!!)
                 }
-                adapterCategory = AdapterCategory(this@DashboardUserActivity, categoryArraList)
-                binding.categoriesRv.adapter = adapterCategory
+                adapterCategoryUser = AdapterCategoryUser(this@DashboardUserActivity, categoryArrayList)
+                binding.categoriesRv.adapter = adapterCategoryUser
             }
 
             override fun onCancelled(error: DatabaseError) {

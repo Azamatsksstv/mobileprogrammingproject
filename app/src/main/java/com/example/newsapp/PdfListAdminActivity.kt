@@ -38,28 +38,24 @@ class PdfListAdminActivity : AppCompatActivity() {
 
         loadPdfList()
 
-        binding.searchEt.addTextChangedListener(object: TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence, p1: Int, p2: Int, p3: Int) {
-                try {
-                    adapterPdfAdmin.filter!!.filter(s)
-                }
-                catch (e: Exception){
-                    Log.d(TAG, "onTextChanged: ${e.message}")
-                }
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-        })
-
-        binding.backBtn.setOnClickListener {
-            onBackPressed()
-        }
+//        binding.searchEt.addTextChangedListener(object: TextWatcher{
+//            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+//
+//            }
+//
+//            override fun onTextChanged(s: CharSequence, p1: Int, p2: Int, p3: Int) {
+//                try {
+//                    adapterPdfAdmin.filter!!.filter(s)
+//                }
+//                catch (e: Exception){
+//                    Log.d(TAG, "onTextChanged: ${e.message}")
+//                }
+//            }
+//
+//            override fun afterTextChanged(p0: Editable?) {
+//
+//            }
+//        })
     }
 
     private fun loadPdfList() {
