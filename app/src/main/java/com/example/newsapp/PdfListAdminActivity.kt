@@ -6,10 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import com.example.newsapp.databinding.ActivityPdfListAdminBinding
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 
 class PdfListAdminActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPdfListAdminBinding
@@ -38,6 +35,10 @@ class PdfListAdminActivity : AppCompatActivity() {
 
         loadPdfList()
 
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
+        }
+
 //        binding.searchEt.addTextChangedListener(object: TextWatcher{
 //            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 //
@@ -62,7 +63,7 @@ class PdfListAdminActivity : AppCompatActivity() {
         pdfArrayList = ArrayList()
         val ref = FirebaseDatabase.getInstance().getReference("Books")
         ref.orderByChild("categoryId").equalTo(categoryId)
-            .addValueEventListener(object: ValueEventListener{
+            .addValueEventListener(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     pdfArrayList.clear()
                     for (ds in snapshot.children){

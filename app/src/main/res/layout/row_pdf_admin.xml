@@ -37,11 +37,13 @@
             style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/pdfRl"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_toStartOf="@id/moreBtn"
+            android:layout_toEndOf="@id/pdfRl"
+            android:ellipsize="end"
             android:maxLines="1"
-            android:text="The Book Title"
-            android:ellipsize="end"/>
+            android:text="The Book Title" />
 
 
         <TextView
@@ -54,7 +56,7 @@
             android:layout_toEndOf="@id/pdfRl"
             android:ellipsize="end"
             android:maxLines="4"
-            android:text="The description of the book" />
+            android:text="" />
 
         <TextView
             android:id="@+id/categoryTv"
@@ -100,11 +102,11 @@
 <!--            android:src="@drawable/ic_more_black" />-->
         <ImageButton
             android:id="@+id/moreBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
-            android:layout_alignParentEnd="true"
             android:background="@drawable/ic_download_black"
             android:padding="5dp"
             android:src="@drawable/ic_more_black" />
