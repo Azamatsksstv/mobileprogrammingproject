@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.264" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_dashboard_user.xml" value="0.264" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_login.xml" value="0.12613981762917933" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_main.xml" value="0.18070652173913043" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_pdf_list_admin.xml" value="0.259375" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_profile.xml" value="0.259375" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_register.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/row_category.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/row_pdf_admin.xml" value="0.2" />
       </map>

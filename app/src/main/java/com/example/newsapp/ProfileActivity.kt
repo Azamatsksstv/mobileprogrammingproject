@@ -19,13 +19,13 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//
+//        actionBar = supportActionBar!!
+//        actionBar.title = "Profile"
 
-        actionBar = supportActionBar!!
-        actionBar.title = "Profile"
-
+//
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
-
 
 
         binding.logoutBtn.setOnClickListener{
@@ -38,8 +38,8 @@ class ProfileActivity : AppCompatActivity() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null){
             val email = firebaseUser.email
-
             binding.emailTv.text = email
+            binding.userNameTv.text = firebaseUser.uid
         }
         else{
             startActivity(Intent(this, LoginActivity::class.java))

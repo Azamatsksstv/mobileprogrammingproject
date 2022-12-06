@@ -21,6 +21,10 @@ class DashboardUserActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
+
+        binding.profileBtn.setOnClickListener{
+            startActivity(Intent(this@DashboardUserActivity, ProfileActivity::class.java))
+        }
     }
 
     private fun checkUser() {
