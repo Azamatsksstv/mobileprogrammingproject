@@ -62,7 +62,7 @@ class MyApplication: Application() {
 
             val TAG = "PDF_THUMBNNAIL_TAG"
             val ref = FirebaseStorage.getInstance().getReferenceFromUrl(pdfUrl)
-            ref.getBytes(Constants.MAX_BYTES_PDF)
+            ref.getBytes(50000000)
                 .addOnSuccessListener { bytes ->
                     Log.d(TAG, "loadPdfSize: Size Bytes $bytes")
 
