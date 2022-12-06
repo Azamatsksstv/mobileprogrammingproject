@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Sdu Book</string>
-    <string name="no_account">Not have account? <b>SignUp</b></string>
+    <string name="no_account">Click to <b>SignUp</b></string>
 </resources>

@@ -56,6 +56,10 @@ class PdfListAdminActivity : AppCompatActivity() {
 
             }
         })
+
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun loadPdfList() {

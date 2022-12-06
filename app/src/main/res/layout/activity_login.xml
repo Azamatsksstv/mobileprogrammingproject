@@ -31,7 +31,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Please Login"
+            android:text="Login"
             android:textColor="@color/white"
             android:textSize="28sp" />
 
@@ -108,7 +108,7 @@
                 android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:text="Forgot Password?"
-                android:textColor="#3C3C3C"/>
+                android:textColor="#3C3C3C" />
 
 
             <Button
@@ -128,14 +128,15 @@
     </ScrollView>
 
     <TextView
-    android:id="@+id/noAccountTv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/no_account"
-    android:layout_alignParentBottom="true"
-    android:padding="10dp"
-    android:layout_centerHorizontal="true"
-    style="@style/TextAppearance.MaterialComponents.Caption"/>
+        android:id="@+id/noAccountTv"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:text="@string/no_account" />
 
 
 

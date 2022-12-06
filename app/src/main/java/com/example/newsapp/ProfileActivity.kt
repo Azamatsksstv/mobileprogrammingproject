@@ -57,6 +57,9 @@ class ProfileActivity : AppCompatActivity() {
         binding.okBtn.setOnClickListener{
             validateData()
         }
+        binding.backBtn.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun validateData() {
@@ -112,7 +115,7 @@ class ProfileActivity : AppCompatActivity() {
                     val profileImage = "${snapshot.child("profileImage").value}"
 
                     binding.nameTv.text = name
-                    binding.emailTv.text = email
+//                    binding.emailTv.text = email
 
                     try {
                         Glide.with(this@ProfileActivity)

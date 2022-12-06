@@ -8,10 +8,10 @@
     tools:context=".DashboardUserActivity">
 
     <RelativeLayout
+        android:id="@+id/toolbarRl"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@drawable/shape_toolbar02">
-
 
         <ImageButton
             android:id="@+id/profileBtn"
@@ -22,6 +22,7 @@
             android:layout_marginStart="10dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_person_white" />
+
 
         <TextView
             android:id="@+id/titleTv"
@@ -54,5 +55,57 @@
             android:src="@drawable/ic_logout_white" />
 
     </RelativeLayout>
+
+
+    <!--    Search zhasaluy-->
+
+
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarRl"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawableStart="@drawable/ic_search_gray"
+        android:hint="Search"
+        android:padding="10dp"
+        android:textColorHint="#CCCCCC"/>
+
+    <!--    Categoriyalar-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoriesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomLl"
+        android:layout_below="@id/searchEt"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_category_user" />
+
+
+    <LinearLayout
+        android:id="@+id/bottomLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+
+
+
+
+    </LinearLayout>
 
 </RelativeLayout>
