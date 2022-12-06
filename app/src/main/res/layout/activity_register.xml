@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back01"
+    android:background="@drawable/back"
     tools:context=".RegisterActivity">
 
 
@@ -29,7 +29,7 @@
             android:layout_height="110dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/booksdu" />
 
 
         <TextView
@@ -50,8 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="225dp">
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="40dp">
 
 
         <RelativeLayout
@@ -76,8 +76,7 @@
                     android:inputType="textPersonName|textCapWords"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#CCCCCC"/>
-
+                    android:textColorHint="#CCCCCC" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -102,13 +101,10 @@
                     android:inputType="textEmailAddress"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#CCCCCC"/>
-
+                    android:textColorHint="#CCCCCC" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -117,8 +113,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/emailTil"
                 android:layout_marginTop="5dp"
-                app:passwordToggleEnabled="true"
-                app:hintEnabled="false">
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/passwordEt"
@@ -131,12 +127,10 @@
                     android:inputType="textPassword"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#CCCCCC"/>
-
+                    android:textColorHint="#CCCCCC" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -145,8 +139,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/passwordTil"
                 android:layout_marginTop="5dp"
-                app:passwordToggleEnabled="true"
-                app:hintEnabled="false">
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true">
 
                 <EditText
                     android:id="@+id/cPasswordEt"
@@ -159,8 +153,7 @@
                     android:inputType="textPassword"
                     android:padding="10dp"
                     android:textColor="@color/black"
-                    android:textColorHint="#CCCCCC"/>
-
+                    android:textColorHint="#CCCCCC" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -173,7 +166,7 @@
                 android:layout_below="@id/cPasswordTil"
                 android:layout_marginTop="20dp"
                 android:background="@color/white"
-                android:text="Register"/>
+                android:text="Register" />
 
 
         </RelativeLayout>

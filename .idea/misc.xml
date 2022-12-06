@@ -3,13 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/ic_attach_white.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/ic_back_white.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/ic_category_gray.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/shape_button01.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/shape_button02.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/shape_button03.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/shape_edittext01.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/drawable/shape_toolbar01.xml" value="0.1385" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_category_add.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_dashboard_admin.xml" value="0.264" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_dashboard_user.xml" value="0.264" />
-        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_login.xml" value="0.12613981762917933" />
-        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_main.xml" value="0.18070652173913043" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_pdf_add.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_pdf_list_admin.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_profile.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_register.xml" value="0.259375" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_sign_up.xml" value="0.12613981762917933" />
+        <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/activity_splash.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/row_category.xml" value="0.259375" />
         <entry key="..\:/Disk C/GitHub/mobileprogrammingproject/app/src/main/res/layout/row_pdf_admin.xml" value="0.2" />
       </map>

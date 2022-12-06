@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back01"
+    android:background="@drawable/back"
     tools:context=".LoginActivity">
-
 
 
     <RelativeLayout
@@ -22,19 +21,19 @@
             android:layout_height="110dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:src="@drawable/logo"/>
+            android:src="@drawable/booksdu" />
 
 
         <TextView
-            android:layout_below="@id/iconTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/iconTv"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
             android:text="Please Login"
             android:textColor="@color/white"
-            android:textSize="28sp"
-            android:fontFamily="sans-serif-condensed"/>
+            android:textSize="28sp" />
 
     </RelativeLayout>
 
@@ -110,17 +109,17 @@
                 android:padding="5dp"
                 android:text="Forgot Password?"
                 android:textColor="#3C3C3C"/>
-            
-            
+
+
             <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/forgotTv"
-                android:text="Login"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_button01"
-                android:textColor="@color/white"/>
+                android:text="Login"
+                android:textColor="@color/white" />
 
 
         </RelativeLayout>

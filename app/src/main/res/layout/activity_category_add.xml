@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back01"
+    android:background="@drawable/back"
     tools:context=".CategoryAddActivity">
 
     <RelativeLayout
@@ -27,9 +27,9 @@
             android:id="@+id/iconTv"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/backBtn"
-            android:src="@drawable/logo"/>
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/booksdu" />
 
         <TextView
             android:layout_width="wrap_content"
