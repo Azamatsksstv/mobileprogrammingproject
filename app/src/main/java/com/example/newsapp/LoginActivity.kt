@@ -43,8 +43,8 @@ class LoginActivity : AppCompatActivity() {
             validateData()
         }
 
-        binding.forgotTV.setOnClickListener {
-            startActivity(Intent(this, ForgotPasswordActivity))
+        binding.forgotTv.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
     }
 
